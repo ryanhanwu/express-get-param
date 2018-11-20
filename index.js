@@ -5,10 +5,11 @@ const createError = require('http-errors')
 module.exports = middlewareGetParam
 
 const fetchParameter = function (req, name) {
-  return req.params[name] || // URL Parameters: https://expressjs.com/en/api.html#req.params
-  req.get(name) || // Headers: https://expressjs.com/en/api.html#req.get
-  req.query[name] || // Query String: https://expressjs.com/en/api.html#req.query
-  req.body[name] // Body: https://expressjs.com/en/api.html#req.body
+  debug(`Fetching parameter: [${name}]`)
+  if (!req.body) {
+    throw new Error('res.body is undefined, please check your middleware and see if body-parser or express.json() is set')
+  }
+  return req.params[name] || req.get(name) || req.query[name] || req.body[name]
 }
 
 const parse = (value, parser) => {
@@ -29,11 +30,13 @@ function middlewareGetParam (name, {
   validator = null,
   validationError,
   alias = null } = {}) {
-  debug(`Initialize middleware: ${name}`)
+  debug(`Create middleware: getParam('${name}')`)
   const getParam = function (req, res, next) {
     const rawValue = fetchParameter(req, name)
     const value = rawValue ? parse(rawValue, parser) : null
+
     if (validator) {
+      debug(`Validating param: [${name}]`)
       try {
         if (!validator(value)) {
           return next(createError(400, `Validation Error - [${name}]: ${value}`))
@@ -52,6 +55,6 @@ function middlewareGetParam (name, {
     }
     return next()
   }
-  Object.defineProperty(getParam, 'name', { value: `getParam(${name})`, writable: false })
+  //   Object.defineProperty(getParam, 'name', { value: `getParam(${name})`, writable: false })
   return getParam
 }
