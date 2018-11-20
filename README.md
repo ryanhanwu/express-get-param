@@ -1,2 +1,2 @@
-# Express GetParam
+# get-param 
 Express.js get parameter middleware.
