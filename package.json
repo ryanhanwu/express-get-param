@@ -1,6 +1,6 @@
 {
   "name": "express-get-param",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.js get parameter middleware.",
   "main": "./lib/index.js",
   "author": "Ryan <hello@ryanwu.me> (https://github.com/ryanhanwu/)",
