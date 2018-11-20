@@ -7,7 +7,8 @@
   "scripts": {
     "lint": "eslint --plugin markdown --ext js,md .",
     "test": "jest",
-    "test:coverage": "jest --coverage --collectCoverageFrom=lib/**/*.js || coveralls",
+    "test:coverage": "jest --coverage --collectCoverageFrom=lib/**/*.js --reporters=\"./node_modules/jest-html-reporter\"",
+    "coveralls": "jest --coverage --collectCoverageFrom=lib/**/*.js --coverageReporters=text-lcov | coveralls",
     "test:debug": "DEBUG=* node --inspect-brk ./node_modules/.bin/jest"
   },
   "repository": {
@@ -42,6 +43,7 @@
     "express": "^4.16.4",
     "istanbul": "^0.4.5",
     "jest": "^23.6.0",
+    "jest-html-reporter": "^2.4.2",
     "supertest": "^3.3.0"
   }
 }

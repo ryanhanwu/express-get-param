@@ -4,6 +4,15 @@
 [![Coverage Status](https://coveralls.io/repos/github/ryanhanwu/express-get-param/badge.svg?branch=master)](https://coveralls.io/github/ryanhanwu/express-get-param?branch=master)
 
 Express.js get parameter middleware.
+## What is this about and why?
+Compare with [express-param](https://www.npmjs.com/package/express-param), I prefer to see my contraller pameters being defined in the route file like following to improve to improve the code readability
+
+```
+router.get('/api/page', 
+	getParam('limit'), 
+	getParam('skip'),
+	Contraller.pageListApi)
+```
 
 ## Parameters Order
 - URL Parameters:
