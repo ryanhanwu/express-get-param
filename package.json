@@ -1,5 +1,5 @@
 {
-  "name": "get-param",
+  "name": "express-get-param",
   "version": "1.0.0",
   "description": "Node.js get parameter middleware.",
   "main": "./lib/index.js",
@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint --plugin markdown --ext js,md .",
     "test": "jest",
-    "test:coverage": "jest --coverage --collectCoverageFrom=lib/**/*.js",
+    "test:coverage": "jest --coverage --collectCoverageFrom=lib/**/*.js || coveralls",
     "test:debug": "DEBUG=* node --inspect-brk ./node_modules/.bin/jest"
   },
   "repository": {
@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "body-parser": "^1.18.3",
+    "coveralls": "^3.0.2",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
