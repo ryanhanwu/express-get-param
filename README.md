@@ -1,4 +1,6 @@
 # get-param
+[![Build Status](https://travis-ci.org/ryanhanwu/express-get-param.svg?branch=master)](https://travis-ci.org/ryanhanwu/express-get-param)
+
 Express.js get parameter middleware.
 
 ## Parameters Order
