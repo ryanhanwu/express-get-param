@@ -1,5 +1,5 @@
 {
-  "name": "express-get-param",
+  "name": "get-param",
   "version": "1.0.0",
   "description": "Node.js get parameter middleware.",
   "main": "./lib/index.js",

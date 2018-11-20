@@ -1,7 +1,6 @@
 # get-param
 Express.js get parameter middleware.
 
-
 ## Parameters Order
 - URL Parameters:
      https://expressjs.com/en/api.html#req.params
