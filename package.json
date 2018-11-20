@@ -1,29 +1,34 @@
 {
   "name": "express-get-param",
   "version": "1.0.0",
-  "description": "Express.js get parameter middleware.",
-  "main": "index.js",
+  "description": "Node.js get parameter middleware.",
+  "main": "./lib/index.js",
+  "author": "Ryan <hello@ryanwu.me> (https://github.com/ryanhanwu/)",
   "scripts": {
     "lint": "eslint --plugin markdown --ext js,md .",
     "test": "jest",
+    "test:coverage": "jest --coverage --collectCoverageFrom=lib/**/*.js",
     "test:debug": "DEBUG=* node --inspect-brk ./node_modules/.bin/jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ryanhanwu/express-get-param.git"
   },
-  "author": "",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ryanhanwu/express-get-param/issues"
   },
+  "keywords": [
+    "express",
+    "connect",
+    "middleware"
+  ],
   "homepage": "https://github.com/ryanhanwu/express-get-param#readme",
+  "license": "MIT",
   "dependencies": {
     "debug": "^4.1.0",
     "http-errors": "^1.7.1"
   },
   "devDependencies": {
-    "supertest": "^3.3.0",
     "body-parser": "^1.18.3",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
@@ -34,6 +39,8 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
     "express": "^4.16.4",
-    "jest": "^23.6.0"
+    "istanbul": "^0.4.5",
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0"
   }
 }

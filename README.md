@@ -2,13 +2,13 @@
 Express.js get parameter middleware.
 
 
-###
-URL Parameters:
+## Parameters Order
+- URL Parameters:
      https://expressjs.com/en/api.html#req.params
-Headers:
+- Headers:
      https://expressjs.com/en/api.html#req.get
-Query String:
+- Query String:
      https://expressjs.com/en/api.html#req.query
-Body:
+- Body:
      https://expressjs.com/en/api.html#express.json
      https://expressjs.com/en/api.html#req.body

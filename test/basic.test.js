@@ -1,9 +1,9 @@
 const supertest = require('supertest')
 
-const getParam = require('..')
+const getParam = require('../lib')
 const sampleApp = require('./sampleApp')
 
-describe('basic middleware usage', () => {
+describe('basic usage', () => {
   test('should get empty value ', (done) => {
     sampleApp.get('/route1', getParam('test'), (req, res) => {
       res.json(res.locals)
