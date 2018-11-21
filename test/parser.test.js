@@ -1,11 +1,10 @@
 const supertest = require('supertest')
 
 const getParam = require('../lib')
-
 const sampleApp = require('./sampleApp')
 
 describe('parser usage', () => {
-  test('should get string value ', (done) => {
+  test('should get string value', (done) => {
     sampleApp.get('/route', getParam('test'), (req, res) => {
       res.json(res.locals)
     })
@@ -43,6 +42,18 @@ describe('parser usage', () => {
       .get('/route3?test=5.2')
       .expect(200)
       .expect({ test: 500 })
+      .end(done)
+  })
+  test('should response empty if parse error', (done) => {
+    sampleApp.get('/route4', getParam('test', {
+      parser: getParam.INTEGER
+    }), (req, res) => {
+      res.json(res.locals)
+    })
+    supertest(sampleApp)
+      .get('/route4?test=string')
+      .expect(200)
+      .expect({})
       .end(done)
   })
 })
