@@ -17,12 +17,12 @@ yarn add express-get-param
 ```
 
 ## Basic Usage
-```app.js
+```
 const express = require('express')
 const app = express()
 const getParam = require('express-get-param')
 
-app.use(getParam('parameterName, {Options}))
+app.use(getParam('parameterName', {options}))
 or 
 app.get('/', getParam('parameterName, {Options}), controller)
 ```
@@ -119,5 +119,8 @@ DEBUG=get-param:*
 ```
 
 ## Testing
+```
+npm run test
+```
 
 
