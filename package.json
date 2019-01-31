@@ -1,6 +1,6 @@
 {
   "name": "express-get-param",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Node.js get parameter middleware.",
   "main": "./lib/index.js",
   "author": "Ryan <hello@ryanwu.me> (https://github.com/ryanhanwu/)",
@@ -27,7 +27,8 @@
   "license": "MIT",
   "dependencies": {
     "debug": "^4.1.0",
-    "http-errors": "^1.7.1"
+    "http-errors": "^1.7.1",
+    "moment": "^2.24.0"
   },
   "devDependencies": {
     "body-parser": "^1.18.3",
@@ -44,6 +45,9 @@
     "istanbul": "^0.4.5",
     "jest": "^23.6.0",
     "jest-html-reporter": "^2.4.2",
-    "supertest": "^3.3.0"
+    "mocha": "^5.2.0",
+    "mochawesome": "^3.1.1",
+    "nyc": "^13.1.0",
+    "supertest": "^3.4.2"
   }
 }
