@@ -7,8 +7,8 @@
   "scripts": {
     "lint": "eslint --plugin markdown --ext js,md .",
     "test": "TZ=America/New_York jest",
-    "test:coverage": "jest --coverage --collectCoverageFrom=lib/**/*.js --reporters=\"./node_modules/jest-html-reporter\"",
-    "coveralls": "jest --coverage --collectCoverageFrom=lib/**/*.js --coverageReporters=text-lcov | coveralls",
+    "test:coverage": "TZ=America/New_York jest --coverage --collectCoverageFrom=lib/**/*.js --reporters=\"./node_modules/jest-html-reporter\"",
+    "coveralls": "TZ=America/New_York jest --coverage --collectCoverageFrom=lib/**/*.js --coverageReporters=text-lcov | coveralls",
     "test:debug": "DEBUG=* node --inspect-brk ./node_modules/.bin/jest"
   },
   "repository": {
