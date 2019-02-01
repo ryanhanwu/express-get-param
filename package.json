@@ -6,7 +6,7 @@
   "author": "Ryan <hello@ryanwu.me> (https://github.com/ryanhanwu/)",
   "scripts": {
     "lint": "eslint --plugin markdown --ext js,md .",
-    "test": "jest",
+    "test": "TZ=America/New_York jest",
     "test:coverage": "jest --coverage --collectCoverageFrom=lib/**/*.js --reporters=\"./node_modules/jest-html-reporter\"",
     "coveralls": "jest --coverage --collectCoverageFrom=lib/**/*.js --coverageReporters=text-lcov | coveralls",
     "test:debug": "DEBUG=* node --inspect-brk ./node_modules/.bin/jest"
