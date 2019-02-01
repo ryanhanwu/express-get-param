@@ -23,7 +23,7 @@ const app = express()
 const getParam = require('express-get-param')
 
 app.use(getParam('parameterName', {options}))
-or 
+or
 app.get('/', getParam('parameterName, {Options}), controller)
 ```
 
@@ -87,9 +87,11 @@ router.get('/api/page/:pageName',
     - String
 	    - `getParam.STRING`
 	    - `getParam.INTEGER`
+		- `getParam.DATE`
+		   - Note: getParam.DATE will parse the date string into a `moment` object
 	    - `getParam.ARRAY`
 	       - Note: getParam.ARRAY will parse comma-separated string into array
-    - Function: 
+    - Function:
 	    - return: parsed value
 
 		```
@@ -97,15 +99,15 @@ router.get('/api/page/:pageName',
 		```
 - `validator` (Function): Validate raw parameter value
        - return: boolean
-       - 
+       -
 - `validationError` (Function):
-- `alias` (String): 
+- `alias` (String):
 	The name which will be used to save to res.locals
 
 	```
 	getParam('paramName', {alias: 'paramName2'})
 	...//in later routes
-	const param = res.locals.paramName2 
+	const param = res.locals.paramName2
 	```
 
 ### Env Vars
